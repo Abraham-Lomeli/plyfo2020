@@ -7,7 +7,7 @@ package edu.tecmm.zapopan.promedio.hilos;
 public class Promedio {
 
     public static void main(String []args) {
-        System.out.println("Hola mundo");
+        System.out.println("Tienes "+ Runtime.getRuntime().availableProcessors() + " procesadores lógicos en la JVM");
     }
 }
 
