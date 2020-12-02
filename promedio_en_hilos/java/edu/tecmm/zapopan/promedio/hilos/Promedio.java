@@ -6,8 +6,23 @@ package edu.tecmm.zapopan.promedio.hilos;
 
 public class Promedio {
 
+    private byte nProcesadores;
+
+    public void setNProcesadores(byte n) {
+        nProcesadores = n;
+    }
+
+    public void getNProcesadores() {
+        return n;
+    }
+
     public static void main(String []args) {
-        System.out.println("Tienes "+ Runtime.getRuntime().availableProcessors() + " procesadores lógicos en la JVM");
+
+        promedio = new Promedio();
+
+        promedio.setNProcesadores( (byte) Runtime.getRuntime().availableProcessors() );
+
+        System.out.println("Tienes "+ promedio.getNProcesadores() + " procesadores lógicos en la JVM");
     }
 }
 
