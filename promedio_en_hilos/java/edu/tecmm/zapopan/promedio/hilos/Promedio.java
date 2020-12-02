@@ -17,8 +17,9 @@ public class Promedio {
         return nProcesadores;
     }
 
-    public void leerArchivo(String filename) {
+    public boolean leerArchivo(String filename) {
         la = new LeerArchivo(filename);
+        return la.getDatos().size() == 0;
     }
 
     public static void main(String []args) {
@@ -33,6 +34,11 @@ public class Promedio {
         promedio.setNProcesadores( (byte) Runtime.getRuntime().availableProcessors() );
 
         System.out.println("Tienes "+ promedio.getNProcesadores() + " procesadores lógicos en la JVM");
+
+        if ( ! promedio.leerArchivo(args[0]) ) {
+            System.err.println("Error en el archivo o no hay datos");
+            System.exit(2);
+        }
 
     }
 }
