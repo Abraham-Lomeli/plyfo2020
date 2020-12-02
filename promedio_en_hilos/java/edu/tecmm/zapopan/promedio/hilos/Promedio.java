@@ -19,7 +19,7 @@ public class Promedio {
 
     public boolean leerArchivo(String filename) {
         la = new LeerArchivo(filename);
-        return la.getDatos().size() == 0;
+        return la.getDatos().size() != 0;
     }
 
     public static void main(String []args) {
