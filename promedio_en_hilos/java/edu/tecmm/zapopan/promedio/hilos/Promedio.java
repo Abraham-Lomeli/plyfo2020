@@ -13,8 +13,8 @@ public class Promedio {
         nProcesadores = n;
     }
 
-    public void getNProcesadores() {
-        return n;
+    public byte getNProcesadores() {
+        return nProcesadores;
     }
 
     public void leerArchivo(String filename) {
@@ -28,7 +28,7 @@ public class Promedio {
             System.exit(1);
         }
 
-        promedio = new Promedio();
+        Promedio promedio = new Promedio();
 
         promedio.setNProcesadores( (byte) Runtime.getRuntime().availableProcessors() );
 
