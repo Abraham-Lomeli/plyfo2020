@@ -1,7 +1,5 @@
 /*
- * Copyright (C) <year> <name of author>
- *
- * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-License-Identifier: MIT
  */
 package edu.tecmm.zapopan.promedio.hilos;
 
@@ -18,14 +16,14 @@ public class LeerArchivo {
     private BufferedReader br      = null;
     private ArrayList<int> datos   = null;
 
-    public  LeerArchivo() {
+    public LeerArchivo() {
         archivo = null;
         fr      = null;
         br      = null;
         datos   = null;
     }
 
-    public  LeerArchivo(String nombre) {
+    public LeerArchivo(String nombre) {
 
         String linea;
 
@@ -53,6 +51,10 @@ public class LeerArchivo {
                 e.printStackTrace();
             }
         }
+    }
+
+    public ArrayList<int> getDatos() {
+        return datos;
     }
 }
 
