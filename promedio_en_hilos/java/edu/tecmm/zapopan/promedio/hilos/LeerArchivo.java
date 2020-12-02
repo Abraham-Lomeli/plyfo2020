@@ -14,7 +14,7 @@ public class LeerArchivo {
     private File           archivo = null;
     private FileReader     fr      = null;
     private BufferedReader br      = null;
-    private ArrayList<int> datos   = null;
+    private ArrayList<Integer> datos   = null;
 
     public LeerArchivo() {
         archivo = null;
@@ -30,9 +30,9 @@ public class LeerArchivo {
         try {
             archivo = new File(nombre);
             fr = new FileReader(archivo);
-            br = new BufferredReader(fr);
+            br = new BufferedReader(fr);
 
-            datos = new ArrayList<int>;
+            datos = new ArrayList<Integer>();
 
             while( (linea = br.readLine()) != null)  {
                 datos.add( Integer.parseInt(linea) );
@@ -53,7 +53,7 @@ public class LeerArchivo {
         }
     }
 
-    public ArrayList<int> getDatos() {
+    public ArrayList<Integer> getDatos() {
         return datos;
     }
 }
