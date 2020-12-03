@@ -21,15 +21,16 @@ public class Promedio {
         la = new LeerArchivo(filename);
         return la.getDatos().size() != 0;
     }
-    public float calcularPromedio(){
-	float aux=0;
-	for(int i=0; i<la.getDatos().size();i++){
-		aux= aux + la.getDatos().get(i);
 
-	}
-	aux = aux/la.getDatos().size();
-	return aux;
+    public float calcularPromedio(){
+        float aux=0;
+        for(int i=0; i<la.getDatos().size();i++){
+            aux= aux + la.getDatos().get(i);
+        }
+        aux = aux/la.getDatos().size();
+        return aux;
     }
+
     public static void main(String []args) {
 
         if (args.length == 0) {
@@ -47,7 +48,8 @@ public class Promedio {
             System.err.println("Error en el archivo o no hay datos");
             System.exit(2);
         }
-	System.out.println("El promedio es: "+promedio.calcularPromedio());
+
+        System.out.println("El promedio es: "+promedio.calcularPromedio());
 
     }
 }
