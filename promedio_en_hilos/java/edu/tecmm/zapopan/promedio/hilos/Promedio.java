@@ -22,6 +22,19 @@ public class Promedio {
         return la.getDatos().size() != 0;
     }
 
+
+    public float calcularHilos(){
+	Hilo h1 = new Hilo(la);
+	h1.start();
+	try{
+	h1.join();
+	}
+	catch(Exception e){
+	e.printStackTrace();
+}
+	return h1.getSuma();
+    }
+
     public float calcularPromedio(){
         float aux=0;
         for(int i=0; i<la.getDatos().size();i++){
@@ -30,6 +43,7 @@ public class Promedio {
         aux = aux/la.getDatos().size();
         return aux;
     }
+
 
     public static void main(String []args) {
 
@@ -48,6 +62,9 @@ public class Promedio {
             System.err.println("Error en el archivo o no hay datos");
             System.exit(2);
         }
+	System.out.println("El promedio es: "+promedio.calcularPromedio());
+	System.out.println("El promedio del hilo es: "+promedio.calcularHilos());
+
 
         System.out.println("El promedio es: "+promedio.calcularPromedio());
 
