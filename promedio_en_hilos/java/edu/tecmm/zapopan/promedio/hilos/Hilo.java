@@ -4,7 +4,6 @@
 
 package edu.tecmm.zapopan.promedio.hilos;
 
-
 public class Hilo extends Thread {
 
     private float suma;
@@ -24,13 +23,15 @@ public class Hilo extends Thread {
 
     @Override
     public void run() {
-	float aux=0;
-	for(int i=0; i<la.getDatos().size();i++){
+        float aux=0;
+
+        for(int i=0; i<la.getDatos().size();i++){
             aux= aux + la.getDatos().get(i);
         }
-	suma=aux/la.getDatos().size();
-	System.out.println("Hilo1");
-    }
+
+        suma=aux/la.getDatos().size();
+        System.out.println("Hilo1");
+   }
 }
 /*
  * Editor modelines  -  https://www.wireshark.org/tools/modelines.html
