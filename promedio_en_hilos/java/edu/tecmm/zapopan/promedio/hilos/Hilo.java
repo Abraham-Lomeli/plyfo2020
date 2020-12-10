@@ -5,22 +5,31 @@
 package edu.tecmm.zapopan.promedio.hilos;
 
 
-
 public class Hilo extends Thread {
 
-    private int suma;
+    private float suma;
+    private LeerArchivo la;
 
-    public void setSuma(int n) {
+    public Hilo(LeerArchivo la){
+    	this.la = la;
+    }
+
+    public void setSuma(float n) {
         suma = n;
     }
 
-    public int getSuma() {
-        return Suma;
+    public float getSuma() {
+        return suma;
     }
 
     @Override
     public void run() {
-	
+	float aux=0;
+	for(int i=0; i<la.getDatos().size();i++){
+            aux= aux + la.getDatos().get(i);
+        }
+	suma=aux/la.getDatos().size();
+	System.out.println("Hilo1");
     }
 }
 /*
