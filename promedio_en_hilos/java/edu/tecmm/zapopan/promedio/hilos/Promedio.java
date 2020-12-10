@@ -22,6 +22,7 @@ public class Promedio {
         return la.getDatos().size() != 0;
     }
 
+
     public float calcularHilos(){
 	Hilo h1 = new Hilo(la);
 	h1.start();
@@ -33,15 +34,17 @@ public class Promedio {
 }
 	return h1.getSuma();
     }
-    public float calcularPromedio(){
-	float aux=0;
-	for(int i=0; i<la.getDatos().size();i++){
-		aux= aux + la.getDatos().get(i);
 
-	}
-	aux = aux/la.getDatos().size();
-	return aux;
+    public float calcularPromedio(){
+        float aux=0;
+        for(int i=0; i<la.getDatos().size();i++){
+            aux= aux + la.getDatos().get(i);
+        }
+        aux = aux/la.getDatos().size();
+        return aux;
     }
+
+
     public static void main(String []args) {
 
         if (args.length == 0) {
@@ -62,6 +65,8 @@ public class Promedio {
 	System.out.println("El promedio es: "+promedio.calcularPromedio());
 	System.out.println("El promedio del hilo es: "+promedio.calcularHilos());
 
+
+        System.out.println("El promedio es: "+promedio.calcularPromedio());
 
     }
 }
